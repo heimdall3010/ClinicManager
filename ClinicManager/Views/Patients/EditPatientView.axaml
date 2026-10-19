@@ -1,0 +1,186 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:ClinicManager.ViewModels.Patients"
+             xmlns:models="using:ClinicManager.Models"
+             x:Class="ClinicManager.Views.Patients.EditPatientView"
+             x:DataType="vm:EditPatientViewModel">
+
+    <Grid>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Disabled">
+
+            <StackPanel Classes="form-stack"
+                        Spacing="24"
+                        MaxWidth="1000"
+                        HorizontalAlignment="Left">
+
+                <TextBlock Classes="main-page-description"
+                           Text="Patientendaten bearbeiten, verlegen oder entlassen." />
+
+                <!-- Bearbeitungsformular -->
+                <StackPanel IsVisible="{Binding IsPatientLoaded}"
+                            Spacing="24">
+
+                    <!-- Stammdaten -->
+                    <StackPanel Spacing="16">
+
+                        <TextBlock Classes="form-section-title"
+                                   Text="Stammdaten" />
+
+                        <Grid ColumnDefinitions="*,*"
+                              RowDefinitions="Auto,Auto,Auto"
+                              ColumnSpacing="26"
+                              RowSpacing="18">
+
+                            <StackPanel Grid.Row="0" Grid.Column="0" Spacing="6">
+                                <TextBlock Classes="form-label" Text="Vorname" />
+                                <TextBox Classes="form-input" Text="{Binding FirstName, Mode=TwoWay}" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="0" Grid.Column="1" Spacing="6">
+                                <TextBlock Classes="form-label" Text="Nachname" />
+                                <TextBox Classes="form-input" Text="{Binding LastName, Mode=TwoWay}" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="1" Grid.Column="0" Spacing="6">
+                                <TextBlock Classes="form-label" Text="Geburtsdatum" />
+                                <DatePicker Classes="form-input" SelectedDate="{Binding DateOfBirth, Mode=TwoWay}" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="1" Grid.Column="1" Spacing="6">
+                                <TextBlock Classes="form-label" Text="Geschlecht" />
+                                <ComboBox Classes="form-input"
+                                          ItemsSource="{Binding GenderOptions}"
+                                          SelectedItem="{Binding Gender, Mode=TwoWay}" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="2" Grid.Column="0" Spacing="6">
+                                <TextBlock Classes="form-label" Text="Versichertennummer" />
+                                <TextBox Classes="form-input" Text="{Binding InsuranceNumber, Mode=TwoWay}" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="2" Grid.Column="1" Spacing="6">
+                                <TextBlock Classes="form-label" Text="Telefon" />
+                                <TextBox Classes="form-input" Text="{Binding PhoneNumber, Mode=TwoWay}" />
+                            </StackPanel>
+
+                        </Grid>
+
+                    </StackPanel>
+
+                    <!-- Adresse -->
+                    <StackPanel Spacing="16">
+
+                        <TextBlock Classes="form-section-title"
+                                   Text="Adresse" />
+
+                        <Grid ColumnDefinitions="*,*"
+                              RowDefinitions="Auto,Auto"
+                              ColumnSpacing="26"
+                              RowSpacing="18">
+
+                            <StackPanel Grid.Row="0" Grid.Column="0" Spacing="6">
+                                <TextBlock Classes="form-label" Text="Straße" />
+                                <TextBox Classes="form-input" Text="{Binding Street, Mode=TwoWay}" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="0" Grid.Column="1" Spacing="6">
+                                <TextBlock Classes="form-label" Text="Hausnummer" />
+                                <TextBox Classes="form-input" Text="{Binding StreetNumber, Mode=TwoWay}" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="1" Grid.Column="0" Spacing="6">
+                                <TextBlock Classes="form-label" Text="PLZ" />
+                                <TextBox Classes="form-input" Text="{Binding PostalCode, Mode=TwoWay}" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="1" Grid.Column="1" Spacing="6">
+                                <TextBlock Classes="form-label" Text="Ort" />
+                                <TextBox Classes="form-input" Text="{Binding City, Mode=TwoWay}" />
+                            </StackPanel>
+
+                        </Grid>
+
+                    </StackPanel>
+
+                    <!-- Aufnahme -->
+                    <StackPanel Spacing="16">
+
+                        <TextBlock Classes="form-section-title"
+                                   Text="Aufnahme" />
+
+                        <Grid ColumnDefinitions="*,*"
+                              RowDefinitions="Auto,Auto"
+                              ColumnSpacing="26"
+                              RowSpacing="18">
+
+                            <StackPanel Grid.Row="0" Grid.Column="0" Spacing="6">
+                                <TextBlock Classes="form-label" Text="Station" />
+                                <TextBox Classes="form-input" Text="{Binding StationId, Mode=TwoWay}" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="0" Grid.Column="1" Spacing="6">
+                                <TextBlock Classes="form-label" Text="Zimmer" />
+                                <TextBox Classes="form-input" Text="{Binding RoomId, Mode=TwoWay}" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="1" Grid.Column="0" Spacing="6">
+                                <TextBlock Classes="form-label" Text="Aufnahmedatum" />
+                                <DatePicker Classes="form-input" SelectedDate="{Binding AdmissionDate, Mode=TwoWay}" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="1" Grid.Column="1" Spacing="6">
+                                <TextBlock Classes="form-label" Text="Entlassungsdatum" />
+                                <DatePicker Classes="form-input" SelectedDate="{Binding DischargeDate, Mode=TwoWay}" />
+                            </StackPanel>
+
+                        </Grid>
+
+                    </StackPanel>
+
+                    <Button Classes="btn btn-prim"
+                            Content="Änderungen speichern"
+                            Command="{Binding SavePatientCommand}" />
+
+                </StackPanel>
+
+            </StackPanel>
+
+        </ScrollViewer>
+
+        <!-- Status Overlay -->
+        <Grid Classes="status-overlay"
+              IsVisible="{Binding IsStatusVisible}">
+
+            <Border Classes="status-dialog status-success"
+                    IsVisible="{Binding IsSuccess}">
+                <StackPanel Spacing="20">
+                    <TextBlock Classes="status-success-text"
+                               Text="{Binding StatusMessage}"
+                               TextAlignment="Center" />
+                    <Button Classes="btn btn-prim"
+                            Content="OK"
+                            HorizontalAlignment="Center"
+                            Command="{Binding CloseStatusCommand}" />
+                </StackPanel>
+            </Border>
+
+            <Border Classes="status-dialog status-error"
+                    IsVisible="{Binding IsError}">
+                <StackPanel Spacing="20">
+                    <TextBlock Classes="status-error-text"
+                               Text="{Binding StatusMessage}"
+                               TextAlignment="Center" />
+                    <Button Classes="btn btn-prim"
+                            Content="OK"
+                            HorizontalAlignment="Center"
+                            Command="{Binding CloseStatusCommand}" />
+                </StackPanel>
+            </Border>
+
+        </Grid>
+
+    </Grid>
+
+</UserControl>

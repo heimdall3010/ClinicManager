@@ -1,0 +1,86 @@
+<Styles xmlns="https://github.com/avaloniaui">
+    
+    <!-- button base -->
+    <Style Selector="Button.btn">
+        <Setter Property="MinWidth" Value="120" />
+        <Setter Property="Height" Value="40" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="BorderThickness" Value="2" />
+    </Style>
+
+    
+    <!-- button prim -->
+    <Style Selector="Button.btn-prim">
+        <Setter Property="Background" Value="{StaticResource Prim}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Prim}" />
+        <Setter Property="Foreground" Value="{StaticResource Light}" />
+    </Style>
+
+    <!-- button prim hover -->
+    <Style Selector="Button.btn-prim:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="BorderBrush" Value="{StaticResource Prim}" />
+        <Setter Property="Background" Value="{StaticResource Light}" />
+        <Setter Property="Foreground" Value="{StaticResource Prim}" />
+    </Style>
+
+
+    <!-- button warning -->
+    <Style Selector="Button.warning-button">
+        <Setter Property="BorderBrush" Value="{StaticResource Warning}" />
+        <Setter Property="Background" Value="{StaticResource Warning}" />
+        <Setter Property="Foreground" Value="{StaticResource Light}" />
+    </Style>
+
+
+    <!-- button warning hover -->
+    <Style Selector="Button.warning-button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="BorderBrush" Value="{StaticResource Warning}" />
+        <Setter Property="Background" Value="{StaticResource Light}" />
+        <Setter Property="Foreground" Value="{StaticResource Warning}" />
+    </Style>
+    
+    
+    <!-- button prim disabled -->
+    <Style Selector="Button.btn-prim:disabled">
+        <Setter Property="Background" Value="{StaticResource Sec}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Sec}" />
+        <Setter Property="Foreground" Value="{StaticResource Light}" />
+        <Setter Property="Opacity" Value="0.65" />
+    </Style>
+
+    <!-- Fluent template fix for disabled prim button -->
+    <Style Selector="Button.btn-prim:disabled /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{StaticResource Sec}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Sec}" />
+        <Setter Property="Foreground" Value="{StaticResource Light}" />
+    </Style>
+    
+    
+
+    <!-- Compact action button used as the first column in management tables -->
+    <Style Selector="Button.table-action">
+        <Setter Property="Width" Value="32" />
+        <Setter Property="Height" Value="28" />
+        <Setter Property="MinWidth" Value="32" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Background" Value="{StaticResource Prim}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Prim}" />
+        <Setter Property="Foreground" Value="{StaticResource Light}" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+    </Style>
+
+    <Style Selector="Button.table-action:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{StaticResource Light}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Prim}" />
+        <Setter Property="Foreground" Value="{StaticResource Prim}" />
+    </Style>
+</Styles>

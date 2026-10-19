@@ -1,0 +1,21 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Styles.Resources>
+
+        <SolidColorBrush x:Key="Prim">#111827</SolidColorBrush>
+        <SolidColorBrush x:Key="Sec">#8E9BAB</SolidColorBrush>
+        <SolidColorBrush x:Key="Terz">#CED4DB</SolidColorBrush>
+        
+        <SolidColorBrush x:Key="TextPrim">#111827</SolidColorBrush>
+        <SolidColorBrush x:Key="TextSec">#58677A</SolidColorBrush>
+
+        <SolidColorBrush x:Key="Light">#EEE</SolidColorBrush>
+        <SolidColorBrush x:Key="Dark">#111</SolidColorBrush>
+
+        <SolidColorBrush x:Key="Success">#007A0F</SolidColorBrush>
+        <SolidColorBrush x:Key="Warning">#7F1D1D</SolidColorBrush>
+        
+    </Styles.Resources>
+
+</Styles>

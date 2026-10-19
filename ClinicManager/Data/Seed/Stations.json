@@ -1,0 +1,342 @@
+[
+  {
+    "stationId": "1",
+    "stationName": "Pädiatrie",
+    "bedCapacity": 12,
+    "stationManagerId": "JA-F-R-16081987",
+    "stationDoctorId": "TS-S-R-16081979",
+    "nurseIds": [
+      "MS-B-R-16081992",
+      "LA-H-N-16081997"
+    ],
+    "fsjIds": [],
+    "azubiIds": [
+      "LA-K-R-16082007"
+    ],
+    "rooms": [
+      {
+        "roomId": "1.01",
+        "beds": [
+          {
+            "bedId": "1.01.A",
+            "patientId": "MA-S-R-16082018"
+          },
+          {
+            "bedId": "1.01.B",
+            "patientId": "NH-M-R-16082014"
+          },
+          {
+            "bedId": "1.01.C",
+            "patientId": "CA-Z-N-16082009"
+          }
+        ]
+      },
+      {
+        "roomId": "1.02",
+        "beds": [
+          {
+            "bedId": "1.02.A",
+            "patientId": "LN-B-R-16082016"
+          },
+          {
+            "bedId": "1.02.B",
+            "patientId": "SE-K-R-16082012"
+          },
+          {
+            "bedId": "1.02.C",
+            "patientId": "PL-W-R-16082017"
+          }
+        ]
+      },
+      {
+        "roomId": "1.03",
+        "beds": [
+          {
+            "bedId": "1.03.A",
+            "patientId": null
+          },
+          {
+            "bedId": "1.03.B",
+            "patientId": null
+          },
+          {
+            "bedId": "1.03.C",
+            "patientId": null
+          }
+        ]
+      },
+      {
+        "roomId": "1.04",
+        "beds": [
+          {
+            "bedId": "1.04.A",
+            "patientId": null
+          },
+          {
+            "bedId": "1.04.B",
+            "patientId": null
+          },
+          {
+            "bedId": "1.04.C",
+            "patientId": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "stationId": "2",
+    "stationName": "Gastroenterologie",
+    "bedCapacity": 12,
+    "stationManagerId": "LA-R-R-16081985",
+    "stationDoctorId": "ML-K-H-16081976",
+    "nurseIds": [
+      "DL-W-F-16081995",
+      "KA-S-R-16081999"
+    ],
+    "fsjIds": [],
+    "azubiIds": [
+      "SE-L-Z-16082008"
+    ],
+    "rooms": [
+      {
+        "roomId": "2.01",
+        "beds": [
+          {
+            "bedId": "2.01.A",
+            "patientId": "LS-W-R-16082005"
+          },
+          {
+            "bedId": "2.01.B",
+            "patientId": "EA-F-R-16082000"
+          },
+          {
+            "bedId": "2.01.C",
+            "patientId": "ES-B-N-16081995"
+          }
+        ]
+      },
+      {
+        "roomId": "2.02",
+        "beds": [
+          {
+            "bedId": "2.02.A",
+            "patientId": "NA-K-E-16081991"
+          },
+          {
+            "bedId": "2.02.B",
+            "patientId": "BN-H-N-16081996"
+          },
+          {
+            "bedId": "2.02.C",
+            "patientId": "LA-J-R-16081998"
+          }
+        ]
+      },
+      {
+        "roomId": "2.03",
+        "beds": [
+          {
+            "bedId": "2.03.A",
+            "patientId": null
+          },
+          {
+            "bedId": "2.03.B",
+            "patientId": null
+          },
+          {
+            "bedId": "2.03.C",
+            "patientId": null
+          }
+        ]
+      },
+      {
+        "roomId": "2.04",
+        "beds": [
+          {
+            "bedId": "2.04.A",
+            "patientId": null
+          },
+          {
+            "bedId": "2.04.B",
+            "patientId": null
+          },
+          {
+            "bedId": "2.04.C",
+            "patientId": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "stationId": "3",
+    "stationName": "Neurologie",
+    "bedCapacity": 12,
+    "stationManagerId": "NE-S-Z-16081988",
+    "stationDoctorId": "SN-N-N-16081980",
+    "nurseIds": [
+      "JN-Z-N-16081993",
+      "CA-M-R-16081990"
+    ],
+    "fsjIds": [],
+    "azubiIds": [
+      "MA-S-E-16082006"
+    ],
+    "rooms": [
+      {
+        "roomId": "3.01",
+        "beds": [
+          {
+            "bedId": "3.01.A",
+            "patientId": "SA-B-R-16082001"
+          },
+          {
+            "bedId": "3.01.B",
+            "patientId": "MS-S-L-16081975"
+          },
+          {
+            "bedId": "3.01.C",
+            "patientId": "CN-L-Z-16081982"
+          }
+        ]
+      },
+      {
+        "roomId": "3.02",
+        "beds": [
+          {
+            "bedId": "3.02.A",
+            "patientId": "TS-B-R-16081967"
+          },
+          {
+            "bedId": "3.02.B",
+            "patientId": "PA-K-H-16081978"
+          },
+          {
+            "bedId": "3.02.C",
+            "patientId": "MN-L-G-16081971"
+          }
+        ]
+      },
+      {
+        "roomId": "3.03",
+        "beds": [
+          {
+            "bedId": "3.03.A",
+            "patientId": null
+          },
+          {
+            "bedId": "3.03.B",
+            "patientId": null
+          },
+          {
+            "bedId": "3.03.C",
+            "patientId": null
+          }
+        ]
+      },
+      {
+        "roomId": "3.04",
+        "beds": [
+          {
+            "bedId": "3.04.A",
+            "patientId": null
+          },
+          {
+            "bedId": "3.04.B",
+            "patientId": null
+          },
+          {
+            "bedId": "3.04.C",
+            "patientId": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "stationId": "4",
+    "stationName": "Orthopädie",
+    "bedCapacity": 12,
+    "stationManagerId": "SA-K-R-16081984",
+    "stationDoctorId": "AS-H-N-16081978",
+    "nurseIds": [
+      "MN-K-E-16081982",
+      "AA-V-L-16081994"
+    ],
+    "fsjIds": [],
+    "azubiIds": [
+      "MX-V-SS-16082004"
+    ],
+    "rooms": [
+      {
+        "roomId": "4.01",
+        "beds": [
+          {
+            "bedId": "4.01.A",
+            "patientId": "LA-K-H-16081992"
+          },
+          {
+            "bedId": "4.01.B",
+            "patientId": "FN-R-R-16081987"
+          },
+          {
+            "bedId": "4.01.C",
+            "patientId": "RH-B-R-16081955"
+          }
+        ]
+      },
+      {
+        "roomId": "4.02",
+        "beds": [
+          {
+            "bedId": "4.02.A",
+            "patientId": "WR-K-R-16081952"
+          },
+          {
+            "bedId": "4.02.B",
+            "patientId": "EE-H-N-16081954"
+          },
+          {
+            "bedId": "4.02.C",
+            "patientId": "OO-L-G-16081951"
+          }
+        ]
+      },
+      {
+        "roomId": "4.03",
+        "beds": [
+          {
+            "bedId": "4.03.A",
+            "patientId": null
+          },
+          {
+            "bedId": "4.03.B",
+            "patientId": null
+          },
+          {
+            "bedId": "4.03.C",
+            "patientId": null
+          }
+        ]
+      },
+      {
+        "roomId": "4.04",
+        "beds": [
+          {
+            "bedId": "4.04.A",
+            "patientId": null
+          },
+          {
+            "bedId": "4.04.B",
+            "patientId": null
+          },
+          {
+            "bedId": "4.04.C",
+            "patientId": null
+          }
+        ]
+      }
+    ]
+  }
+]

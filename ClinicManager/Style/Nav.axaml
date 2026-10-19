@@ -1,0 +1,46 @@
+<Styles xmlns="https://github.com/avaloniaui">
+
+    <!-- Sidebar container -->
+    <Style Selector="Border.sidebar">
+        <Setter Property="Background" Value="{StaticResource Prim}" />
+        <Setter Property="Padding" Value="20" />
+    </Style>
+
+    <!-- Sidebar vertical layout -->
+    <Style Selector="StackPanel.sidebar-stack">
+        <Setter Property="Spacing" Value="12" />
+    </Style>
+
+    <!-- Sidebar title -->
+    <Style Selector="TextBlock.sidebar-title">
+        <Setter Property="Foreground" Value="{StaticResource Terz}" />
+        <Setter Property="FontSize" Value="26" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Margin" Value="0 0 0 30" />
+    </Style>
+    
+    
+    <!-- Navigation buttons -->
+    <Style Selector="Button.nav-button">
+        <Setter Property="Height" Value="45" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Background" Value="{StaticResource Prim}" />
+        <Setter Property="Foreground" Value="{StaticResource Terz}" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="Padding" Value="14 0" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+    <!-- Navigation button hover -->
+    <Style Selector="Button.nav-button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{StaticResource Terz}" />
+        <Setter Property="Foreground" Value="{StaticResource Prim}" />
+    </Style>
+
+  
+
+</Styles>

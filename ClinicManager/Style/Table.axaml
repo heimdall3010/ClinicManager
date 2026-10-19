@@ -1,0 +1,76 @@
+<Styles xmlns="https://github.com/avaloniaui">
+
+    <!-- Main DataGrid style -->
+    <Style Selector="DataGrid.patients-table">
+        <Setter Property="Background" Value="{StaticResource Light}" />
+        <Setter Property="Foreground" Value="{StaticResource Prim}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Sec}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="GridLinesVisibility" Value="All" />
+        <Setter Property="HorizontalGridLinesBrush" Value="{StaticResource Sec}" />
+        <Setter Property="VerticalGridLinesBrush" Value="{StaticResource Sec}" />
+        <Setter Property="RowBackground" Value="{StaticResource Light}" />
+    </Style>
+
+    <!-- Header row -->
+    <Style Selector="DataGrid.patients-table DataGridColumnHeader">
+        <Setter Property="Background" Value="{StaticResource Prim}" />
+        <Setter Property="Foreground" Value="{StaticResource Light}" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Padding" Value="12 8" />
+        <Setter Property="BorderBrush" Value="{StaticResource Sec}" />
+        <Setter Property="BorderThickness" Value="0 0 1 1" />
+    </Style>
+
+    <!-- Header text - fix DataGrid -->
+    <Style Selector="DataGrid.patients-table DataGridColumnHeader /template/ ContentPresenter">
+        <Setter Property="Background" Value="{StaticResource Prim}" />
+        <Setter Property="Foreground" Value="{StaticResource Light}" />
+    </Style>
+
+    <!-- Normal rows -->
+    <Style Selector="DataGrid.patients-table DataGridRow">
+        <Setter Property="Background" Value="{StaticResource Light}" />
+        <Setter Property="Foreground" Value="{StaticResource Prim}" />
+        <Setter Property="MinHeight" Value="36" />
+    </Style>
+
+    <!-- Alternating rows -->
+    <Style Selector="DataGrid.patients-table DataGridRow:nth-child(even)">
+        <Setter Property="Background" Value="{StaticResource Light}" />
+        <Setter Property="Foreground" Value="{StaticResource Prim}" />
+    </Style>
+
+    <!-- Normal cells -->
+    <Style Selector="DataGrid.patients-table DataGridCell">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{StaticResource Prim}" />
+        <Setter Property="Padding" Value="12 6" />
+        <Setter Property="BorderBrush" Value="{StaticResource Sec}" />
+        <Setter Property="BorderThickness" Value="0 0 1 1" />
+    </Style>
+
+    <!-- Cell text - fix DataGrid -->
+    <Style Selector="DataGrid.patients-table DataGridCell /template/ ContentPresenter">
+        <Setter Property="Foreground" Value="{StaticResource Prim}" />
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <!-- Selected row -->
+    <Style Selector="DataGrid.patients-table DataGridRow:selected">
+        <Setter Property="Background" Value="{StaticResource Sec}" />
+        <Setter Property="Foreground" Value="{StaticResource Light}" />
+    </Style>
+
+    <!-- Selected cells -->
+    <Style Selector="DataGrid.patients-table DataGridCell:selected">
+        <Setter Property="Background" Value="{StaticResource Sec}" />
+        <Setter Property="Foreground" Value="{StaticResource Light}" />
+    </Style>
+
+    <Style Selector="DataGrid.patients-table DataGridCell:selected /template/ ContentPresenter">
+        <Setter Property="Background" Value="{StaticResource Sec}" />
+        <Setter Property="Foreground" Value="{StaticResource Light}" />
+    </Style>
+
+</Styles>

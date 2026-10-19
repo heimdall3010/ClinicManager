@@ -1,0 +1,410 @@
+<Styles xmlns="https://github.com/avaloniaui">
+
+    <!-- Form container -->
+    <Style Selector="StackPanel.form-stack">
+        <Setter Property="Spacing" Value="26" />
+    </Style>
+
+
+    <!-- Section title -->
+    <Style Selector="TextBlock.form-section-title">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Foreground"
+                Value="{StaticResource TextPrim}" />
+        <Setter Property="Margin" Value="0 4 0 2" />
+    </Style>
+
+
+    <!-- Labels -->
+    <Style Selector="TextBlock.form-label">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Foreground"
+                Value="{StaticResource TextPrim}" />
+        <Setter Property="Margin" Value="0 0 0 2" />
+    </Style>
+
+
+    <!-- ====================================== -->
+    <!-- TextBox                                -->
+    <!-- ====================================== -->
+
+    <Style Selector="TextBox.form-input">
+        <Setter Property="Height" Value="40" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="Padding" Value="12 6" />
+
+        <Setter Property="Background"
+                Value="{StaticResource Light}" />
+
+        <Setter Property="Foreground"
+                Value="{StaticResource TextPrim}" />
+
+        <Setter Property="BorderBrush"
+                Value="{StaticResource Terz}" />
+
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="4" />
+    </Style>
+
+
+    <!-- Hover TextBox -->
+    <Style Selector="TextBox.form-input:pointerover">
+        <Setter Property="Background"
+                Value="{StaticResource Sec}" />
+
+        <Setter Property="Foreground"
+                Value="{StaticResource TextPrim}" />
+
+        <Setter Property="BorderBrush"
+                Value="{StaticResource Terz}" />
+    </Style>
+
+
+    <!-- Active TextBox -->
+    <Style Selector="TextBox.form-input:focus">
+        <Setter Property="Background"
+                Value="{StaticResource Terz}" />
+
+        <Setter Property="Foreground"
+                Value="{StaticResource TextPrim}" />
+
+        <Setter Property="BorderBrush"
+                Value="{StaticResource Terz}" />
+    </Style>
+
+
+    <!-- Fluent template - focus TextBox -->
+    <Style Selector="TextBox.form-input:focus /template/ Border">
+        <Setter Property="Background"
+                Value="{StaticResource Terz}" />
+
+        <Setter Property="BorderBrush"
+                Value="{StaticResource Terz}" />
+    </Style>
+
+
+    <!-- ====================================== -->
+    <!-- ComboBox                               -->
+    <!-- ====================================== -->
+
+    <Style Selector="ComboBox.form-input">
+        <Setter Property="Height" Value="40" />
+        <Setter Property="FontSize" Value="15" />
+
+        <Setter Property="Background"
+                Value="{StaticResource Light}" />
+
+        <Setter Property="Foreground"
+                Value="{StaticResource TextPrim}" />
+
+        <Setter Property="BorderBrush"
+                Value="{StaticResource Terz}" />
+
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="4" />
+    </Style>
+
+
+    <!-- Hover ComboBox -->
+    <Style Selector="ComboBox.form-input:pointerover">
+        <Setter Property="Background"
+                Value="{StaticResource Sec}" />
+
+        <Setter Property="Foreground"
+                Value="{StaticResource TextPrim}" />
+
+        <Setter Property="BorderBrush"
+                Value="{StaticResource Terz}" />
+    </Style>
+
+
+    <!-- Active ComboBox -->
+    <Style Selector="ComboBox.form-input:focus">
+        <Setter Property="Background"
+                Value="{StaticResource Terz}" />
+
+        <Setter Property="Foreground"
+                Value="{StaticResource TextPrim}" />
+
+        <Setter Property="BorderBrush"
+                Value="{StaticResource Terz}" />
+    </Style>
+
+
+    <!-- DatePicker                             -->
+    <Style Selector="DatePicker.form-input">
+        <Setter Property="Height" Value="40" />
+        <Setter Property="FontSize" Value="15" />
+
+        <Setter Property="Background"
+                Value="{StaticResource Light}" />
+
+        <Setter Property="Foreground"
+                Value="{StaticResource TextPrim}" />
+
+        <Setter Property="BorderBrush"
+                Value="{StaticResource Terz}" />
+
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="4" />
+    </Style>
+
+
+    <!-- Ensure DatePicker text is always readable -->
+    <Style Selector="DatePicker.form-input /template/ TextBlock">
+        <Setter Property="Foreground"
+                Value="{StaticResource TextPrim}" />
+    </Style>
+
+
+    <!-- Hover DatePicker -->
+    <Style Selector="DatePicker.form-input:pointerover">
+        <Setter Property="Background"
+                Value="{StaticResource Sec}" />
+
+        <Setter Property="Foreground"
+                Value="{StaticResource TextPrim}" />
+
+        <Setter Property="BorderBrush"
+                Value="{StaticResource Terz}" />
+    </Style>
+
+
+    <!-- Active DatePicker -->
+    <Style Selector="DatePicker.form-input:focus">
+        <Setter Property="Background"
+                Value="{StaticResource Terz}" />
+
+        <Setter Property="Foreground"
+                Value="{StaticResource TextPrim}" />
+
+        <Setter Property="BorderBrush"
+                Value="{StaticResource Terz}" />
+    </Style>
+    
+    
+    <!-- Status messages                        -->
+
+    <Style Selector="Border.status-success">
+            <Setter Property="Background" Value="{StaticResource Terz}" />
+            <Setter Property="BorderBrush" Value="{StaticResource Success}" />
+            <Setter Property="BorderThickness" Value="5" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="Padding" Value="12 10" />
+            <Setter Property="Margin" Value="0 8 0 0" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style Selector="Border.status-error">
+            <Setter Property="Background" Value="{StaticResource Light}" />
+            <Setter Property="BorderBrush" Value="{StaticResource Warning}" />
+            <Setter Property="BorderThickness" Value="5" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="Padding" Value="12 10" />
+            <Setter Property="Margin" Value="0 8 0 0" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style Selector="TextBlock.status-success-text">
+            <Setter Property="Foreground" Value="{StaticResource Success}" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="FontSize" Value="14" />
+    </Style>
+
+    <Style Selector="TextBlock.status-error-text">
+            <Setter Property="Foreground" Value="{StaticResource Warning}" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="FontSize" Value="14" />
+    </Style>
+    
+    
+    <!-- Modal status overlay -->
+    <Style Selector="Grid.status-overlay">
+            <Setter Property="Background" Value="#66000000" />
+    </Style>
+
+
+    <Style Selector="Border.status-dialog">
+            <Setter Property="Width" Value="420" />
+            <Setter Property="MinHeight" Value="150" />
+            <Setter Property="Padding" Value="30" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+
+    <Style Selector="Border.status-success">
+            <Setter Property="Background" Value="{StaticResource Light}" />
+            <Setter Property="BorderBrush" Value="{StaticResource Success}" />
+            <Setter Property="BorderThickness" Value="5" />
+            <Setter Property="CornerRadius" Value="8" />
+    </Style>
+
+
+    <Style Selector="Border.status-error">
+            <Setter Property="Background" Value="{StaticResource Light}" />
+            <Setter Property="BorderBrush" Value="{StaticResource Warning}" />
+            <Setter Property="BorderThickness" Value="5" />
+            <Setter Property="CornerRadius" Value="8" />
+    </Style>
+
+
+    <Style Selector="TextBlock.status-success-text">
+            <Setter Property="Foreground" Value="{StaticResource Success}" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="FontSize" Value="16" />
+    </Style>
+
+
+    <Style Selector="TextBlock.status-error-text">
+            <Setter Property="Foreground" Value="{StaticResource Warning}" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="FontSize" Value="16" />
+    </Style>
+
+    
+    <!-- Primary select fields -->
+
+    <Style Selector="ComboBox.select-input">
+        <Setter Property="Height" Value="40" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="Background" Value="{StaticResource Prim}" />
+        <Setter Property="Foreground" Value="{StaticResource Light}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Prim}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="4" />
+    </Style>
+
+    <Style Selector="ComboBox.select-input:pointerover">
+        <Setter Property="Background" Value="{StaticResource Prim}" />
+        <Setter Property="Foreground" Value="{StaticResource Light}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Prim}" />
+    </Style>
+
+    <Style Selector="ComboBox.select-input:focus">
+        <Setter Property="Background" Value="{StaticResource Prim}" />
+        <Setter Property="Foreground" Value="{StaticResource Light}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Prim}" />
+    </Style>
+
+    <Style Selector="ComboBox.select-input:pressed">
+        <Setter Property="Background" Value="{StaticResource Prim}" />
+        <Setter Property="Foreground" Value="{StaticResource Light}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Prim}" />
+    </Style>
+
+    <Style Selector="ComboBox.select-input /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{StaticResource Prim}" />
+        <Setter Property="Foreground" Value="{StaticResource Light}" />
+    </Style>
+
+    <Style Selector="ComboBox.select-input:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{StaticResource Prim}" />
+        <Setter Property="Foreground" Value="{StaticResource Light}" />
+    </Style>
+
+    <Style Selector="ComboBox.select-input:focus /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{StaticResource Prim}" />
+        <Setter Property="Foreground" Value="{StaticResource Light}" />
+    </Style>
+
+    <!-- Dropdown items -->
+    <Style Selector="ComboBoxItem">
+        <Setter Property="Background" Value="{StaticResource Prim}" />
+        <Setter Property="Foreground" Value="{StaticResource Light}" />
+    </Style>
+
+    <Style Selector="ComboBoxItem:pointerover">
+        <Setter Property="Background" Value="{StaticResource Prim}" />
+        <Setter Property="Foreground" Value="{StaticResource Light}" />
+    </Style>
+
+    <Style Selector="ComboBoxItem:selected">
+        <Setter Property="Background" Value="{StaticResource Prim}" />
+        <Setter Property="Foreground" Value="{StaticResource Light}" />
+    </Style>
+
+    <Style Selector="ComboBoxItem:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{StaticResource Prim}" />
+        <Setter Property="Foreground" Value="{StaticResource Light}" />
+    </Style>
+
+    <Style Selector="ComboBoxItem:selected /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{StaticResource Prim}" />
+        <Setter Property="Foreground" Value="{StaticResource Light}" />
+    </Style>
+
+
+    <!-- Patient Suchanfrage -->
+
+    <Style Selector="ListBox.patient-suggestions">
+        <Setter Property="Background" Value="{StaticResource Prim}" />
+        <Setter Property="Foreground" Value="{StaticResource Light}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Prim}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="4" />
+    </Style>
+
+    <Style Selector="ListBox.patient-suggestions > ListBoxItem">
+        <Setter Property="Background" Value="{StaticResource Prim}" />
+        <Setter Property="Foreground" Value="{StaticResource Light}" />
+        <Setter Property="Padding" Value="10 8" />
+    </Style>
+
+    <Style Selector="ListBox.patient-suggestions > ListBoxItem:pointerover">
+        <Setter Property="Background" Value="{StaticResource Prim}" />
+        <Setter Property="Foreground" Value="{StaticResource Light}" />
+    </Style>
+
+    <Style Selector="ListBox.patient-suggestions > ListBoxItem:selected">
+        <Setter Property="Background" Value="{StaticResource Prim}" />
+        <Setter Property="Foreground" Value="{StaticResource Light}" />
+    </Style>
+    
+    
+    <!-- Checkboxen -->
+    <!-- Text -->
+    <Style Selector="CheckBox">
+        <Setter Property="Foreground" Value="{DynamicResource Prim}" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+    </Style>
+
+    <!-- Grundzustand -->
+    <Style Selector="CheckBox /template/ Border#PART_Border">
+        <Setter Property="BorderBrush" Value="Black" />
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <!-- Checked -->
+    <Style Selector="CheckBox:checked /template/ Border#PART_Border">
+        <Setter Property="BorderBrush" Value="Black" />
+        <Setter Property="Background" Value="{DynamicResource Prim}" />
+    </Style>
+
+    <!-- Hover deaktivieren -->
+    <Style Selector="CheckBox:pointerover /template/ Border#PART_Border">
+        <Setter Property="BorderBrush" Value="Black" />
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style Selector="CheckBox:checked:pointerover /template/ Border#PART_Border">
+        <Setter Property="BorderBrush" Value="Black" />
+        <Setter Property="Background" Value="{DynamicResource Prim}" />
+    </Style>
+
+    <!-- Pressed / Clicked deaktivieren -->
+    <Style Selector="CheckBox:pressed /template/ Border#PART_Border">
+        <Setter Property="BorderBrush" Value="Black" />
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style Selector="CheckBox:checked:pressed /template/ Border#PART_Border">
+        <Setter Property="BorderBrush" Value="Black" />
+        <Setter Property="Background" Value="{DynamicResource Prim}" />
+    </Style>
+    
+
+
+</Styles>

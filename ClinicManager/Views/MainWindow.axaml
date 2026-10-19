@@ -1,0 +1,79 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:ClinicManager.ViewModels"
+        x:Class="ClinicManager.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Title="ClinicManager"
+        Width="1200"
+        Height="720"
+        WindowStartupLocation="CenterScreen">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <Grid ColumnDefinitions="1*,4*">
+
+        <!-- Navigation Links -->
+        <Border Grid.Column="0"
+                Classes="sidebar">
+
+            <StackPanel Classes="sidebar-stack">
+
+                <TextBlock Classes="sidebar-title"
+                           Text="ClinicManager" />
+
+                <Button Classes="nav-button"
+                        Content="Dashboard"
+                        Command="{Binding ShowDashboardCommand}" />
+
+                <Button Classes="nav-button"
+                        Content="Patienten"
+                        Command="{Binding ShowPatientsCommand}" />
+                
+                <Button Classes="nav-button"
+                        Content="Stationen"
+                        Command="{Binding ShowStationsCommand}" />
+                
+                <Button Classes="nav-button"
+                        Content="Personal"
+                        Command="{Binding ShowStaffMembersCommand}" />
+
+                <!--
+                <Button Classes="nav-button"
+                        Content="Dienstpläne"
+                        Command="{Binding ShowDutyPlansCommand}" />
+                -->
+                
+                <!--
+                <Button Classes="nav-button"
+                        Content="Therapien &amp; OPs"
+                        Command="{Binding ShowTreatmentsCommand}" />
+                -->
+
+
+            </StackPanel>
+        </Border>
+
+        <!-- Main Content -->
+        <Border Grid.Column="1"
+                Classes="main-content">
+
+            <Grid RowDefinitions="Auto,*"
+                  RowSpacing="20">
+
+                <TextBlock Grid.Row="0"
+                           Classes="main-page-title"
+                           Text="{Binding CurrentPageTitle}" />
+
+                <ContentControl Grid.Row="1"
+                                Content="{Binding CurrentPage}"
+                                HorizontalContentAlignment="Stretch"
+                                VerticalContentAlignment="Stretch" />
+
+            </Grid>
+
+        </Border>
+
+    </Grid>
+</Window>

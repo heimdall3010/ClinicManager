@@ -1,0 +1,64 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:ClinicManager.ViewModels.Stations"
+             xmlns:models="using:ClinicManager.Models"
+             x:Class="ClinicManager.Views.Stations.AllStationsView"
+             x:DataType="vm:AllStationsViewModel">
+
+    <Grid RowDefinitions="Auto,Auto,*" RowSpacing="20">
+
+        <TextBlock Grid.Row="0"
+                   Classes="main-page-description"
+                   Text="Übersicht der gespeicherten Stationen" />
+
+        <Grid Grid.Row="1"
+              ColumnDefinitions="*,Auto"
+              ColumnSpacing="16">
+
+            <TextBox Grid.Column="0"
+                     Classes="form-input"
+                     Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     PlaceholderText="Station suchen …"
+                     MaxWidth="420"
+                     HorizontalAlignment="Left" />
+
+            <Button Grid.Column="1"
+                    Classes="btn btn-prim"
+                    Content="Station einrichten"
+                    HorizontalAlignment="Right"
+                    Command="{Binding AddStationCommand}" />
+
+        </Grid>
+
+        <DataGrid Grid.Row="2"
+                  Classes="patients-table"
+                  ItemsSource="{Binding Stations}"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  CanUserSortColumns="True">
+
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="" Width="48">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate x:DataType="vm:StationListItemViewModel">
+                            <Button Classes="table-action"
+                                    Content="✎"
+                                    ToolTip.Tip="Station bearbeiten"
+                                    Command="{ReflectionBinding $parent[DataGrid].DataContext.EditStationCommand}"
+                                    CommandParameter="{Binding Station}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTextColumn Header="Stations-ID" Binding="{Binding StationId}" />
+                <DataGridTextColumn Header="Station" Binding="{Binding StationName}" />
+                <DataGridTextColumn Header="Betten" Binding="{Binding BedCapacity}" />
+                <DataGridTextColumn Header="Stationsleitung" Binding="{Binding StationManagerName}" />
+                <DataGridTextColumn Header="Stationsarzt" Binding="{Binding StationDoctorName}" />
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+    </Grid>
+
+</UserControl>

@@ -1,0 +1,82 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:ClinicManager.ViewModels.Patients"
+             xmlns:models="using:ClinicManager.Models"
+             x:Class="ClinicManager.Views.Patients.AllPatientsView"
+             x:DataType="vm:AllPatientsViewModel">
+
+    <Grid RowDefinitions="Auto,Auto,*" RowSpacing="20">
+
+        <TextBlock Grid.Row="0"
+                   Classes="main-page-description"
+                   Text="Übersicht der gespeicherten Patientendaten" />
+
+        <Grid Grid.Row="1"
+              ColumnDefinitions="Auto,*,Auto"
+              ColumnSpacing="16">
+
+            <ComboBox Grid.Column="0"
+                      Classes="form-input"
+                      ItemsSource="{Binding PatientFilters}"
+                      SelectedItem="{Binding SelectedFilter}"
+                      Width="220"
+                      HorizontalAlignment="Left" />
+
+            <TextBox Grid.Column="1"
+                     Classes="form-input"
+                     Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     PlaceholderText="Patienten suchen …"
+                     MaxWidth="420"
+                     HorizontalAlignment="Left" />
+
+            <Button Grid.Column="2"
+                    Classes="btn btn-prim"
+                    Content="Patient aufnehmen"
+                    HorizontalAlignment="Right"
+                    Command="{Binding AddPatientCommand}" />
+
+        </Grid>
+
+        <DataGrid Grid.Row="2"
+                  Classes="patients-table"
+                  ItemsSource="{Binding Patients}"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  CanUserSortColumns="True">
+
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="" Width="48">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate x:DataType="models:Patient">
+                            <Button Classes="table-action"
+                                    Content="✎"
+                                    ToolTip.Tip="Patient bearbeiten"
+                                    Command="{ReflectionBinding $parent[DataGrid].DataContext.EditPatientCommand}"
+                                    CommandParameter="{Binding}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTextColumn Header="Patienten-ID" Binding="{Binding PatientId}" />
+                <DataGridTextColumn Header="Vorname" Binding="{Binding FirstName}" />
+                <DataGridTextColumn Header="Nachname" Binding="{Binding LastName}" />
+                <DataGridTextColumn Header="Geburtsdatum" Binding="{Binding DateOfBirth, StringFormat='{}{0:dd.MM.yyyy}'}" />
+                <DataGridTextColumn Header="Alter" Binding="{Binding Age}" />
+                <DataGridTextColumn Header="Geschlecht" Binding="{Binding Gender}" />
+                <DataGridTextColumn Header="Versichertennummer" Binding="{Binding InsuranceNumber}" />
+                <DataGridTextColumn Header="Telefon" Binding="{Binding PhoneNumber}" />
+                <DataGridTextColumn Header="Straße" Binding="{Binding Street}" />
+                <DataGridTextColumn Header="Nr." Binding="{Binding StreetNumber}" />
+                <DataGridTextColumn Header="PLZ" Binding="{Binding PostalCode}" />
+                <DataGridTextColumn Header="Ort" Binding="{Binding City}" />
+                <DataGridTextColumn Header="Station" Binding="{Binding StationId}" />
+                <DataGridTextColumn Header="Zimmer" Binding="{Binding RoomId}" />
+                <DataGridTextColumn Header="Aufnahme" Binding="{Binding AdmissionDate, StringFormat='{}{0:dd.MM.yyyy}'}" />
+                <DataGridTextColumn Header="Entlassung" Binding="{Binding DischargeDateDisplay}" />
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+    </Grid>
+
+</UserControl>

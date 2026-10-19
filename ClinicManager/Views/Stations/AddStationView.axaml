@@ -1,0 +1,166 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:ClinicManager.ViewModels.Stations"
+             xmlns:models="using:ClinicManager.Models"
+             x:Class="ClinicManager.Views.Stations.AddStationView"
+             x:DataType="vm:AddStationViewModel">
+
+    <Grid>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Disabled">
+
+            <StackPanel Classes="form-stack"
+                        Spacing="24"
+                        MaxWidth="1000"
+                        HorizontalAlignment="Left">
+
+                <TextBlock Classes="main-page-description"
+                           Text="Neue Station mit Stammdaten, ärztlicher Leitung und Stationspersonal einrichten." />
+
+                <StackPanel Spacing="16">
+                    <TextBlock Classes="form-section-title" Text="Stammdaten" />
+
+                    <Grid ColumnDefinitions="*,*"
+                          RowDefinitions="Auto,Auto"
+                          ColumnSpacing="26"
+                          RowSpacing="18">
+
+                        <StackPanel Grid.Row="0" Grid.Column="0" Spacing="6">
+                            <TextBlock Classes="form-label" Text="Stations-ID" />
+                            <ComboBox Classes="form-input"
+                                      ItemsSource="{Binding StationIdOptions}"
+                                      SelectedItem="{Binding StationId, Mode=TwoWay}" />
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="0" Grid.Column="1" Spacing="6">
+                            <TextBlock Classes="form-label" Text="Stationsname" />
+                            <TextBox Classes="form-input"
+                                     Text="{Binding StationName, Mode=TwoWay}" />
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="1" Grid.Column="0" Spacing="6">
+                            <TextBlock Classes="form-label" Text="Bettenkapazität" />
+                            <NumericUpDown Classes="form-input"
+                                           Minimum="1"
+                                           Maximum="999"
+                                           Value="{Binding BedCapacity, Mode=TwoWay}" />
+                        </StackPanel>
+
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel Spacing="16">
+                    <TextBlock Classes="form-section-title" Text="Stationsleitung" />
+
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="26">
+                        <StackPanel Grid.Column="0" Spacing="6">
+                            <TextBlock Classes="form-label" Text="Stationsleitung" />
+                            <ComboBox Classes="form-input"
+                                      ItemsSource="{Binding StationManagerOptions}"
+                                      SelectedItem="{Binding SelectedStationManager, Mode=TwoWay}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate x:DataType="models:StaffMember">
+                                        <TextBlock Text="{Binding FullName}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1" Spacing="6">
+                            <TextBlock Classes="form-label" Text="Stationsarzt / Stationsärztin" />
+                            <ComboBox Classes="form-input"
+                                      ItemsSource="{Binding StationDoctorOptions}"
+                                      SelectedItem="{Binding SelectedStationDoctor, Mode=TwoWay}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate x:DataType="models:StaffMember">
+                                        <TextBlock Text="{Binding FullName}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel Spacing="16">
+                    <TextBlock Classes="form-section-title" Text="Stationspersonal" />
+
+                    <Grid ColumnDefinitions="*,*,*" ColumnSpacing="26">
+                        <StackPanel Grid.Column="0" Spacing="8">
+                            <TextBlock Classes="form-label" Text="Pflegepersonal" />
+                            <ItemsControl ItemsSource="{Binding NurseOptions}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate x:DataType="vm:SelectableStaffMember">
+                                        <CheckBox Content="{Binding DisplayName}"
+                                                  IsChecked="{Binding IsSelected, Mode=TwoWay}" />
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1" Spacing="8">
+                            <TextBlock Classes="form-label" Text="FSJ" />
+                            <ItemsControl ItemsSource="{Binding FsjOptions}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate x:DataType="vm:SelectableStaffMember">
+                                        <CheckBox Content="{Binding DisplayName}"
+                                                  IsChecked="{Binding IsSelected, Mode=TwoWay}" />
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="2" Spacing="8">
+                            <TextBlock Classes="form-label" Text="Auszubildende" />
+                            <ItemsControl ItemsSource="{Binding AzubiOptions}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate x:DataType="vm:SelectableStaffMember">
+                                        <CheckBox Content="{Binding DisplayName}"
+                                                  IsChecked="{Binding IsSelected, Mode=TwoWay}" />
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+
+                <Button Classes="btn btn-prim"
+                        Content="Station speichern"
+                        Command="{Binding SaveStationCommand}" />
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <Grid Classes="status-overlay"
+              IsVisible="{Binding IsStatusVisible}">
+
+            <Border Classes="status-dialog status-success"
+                    IsVisible="{Binding IsSuccess}">
+                <StackPanel Spacing="20">
+                    <TextBlock Classes="status-success-text"
+                               Text="{Binding StatusMessage}"
+                               TextAlignment="Center" />
+                    <Button Classes="btn btn-prim"
+                            Content="OK"
+                            HorizontalAlignment="Center"
+                            Command="{Binding CloseStatusCommand}" />
+                </StackPanel>
+            </Border>
+
+            <Border Classes="status-dialog status-error"
+                    IsVisible="{Binding IsError}">
+                <StackPanel Spacing="20">
+                    <TextBlock Classes="status-error-text"
+                               Text="{Binding StatusMessage}"
+                               TextAlignment="Center" />
+                    <Button Classes="btn btn-prim"
+                            Content="OK"
+                            HorizontalAlignment="Center"
+                            Command="{Binding CloseStatusCommand}" />
+                </StackPanel>
+            </Border>
+
+        </Grid>
+
+    </Grid>
+</UserControl>

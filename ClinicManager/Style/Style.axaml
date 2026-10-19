@@ -1,0 +1,12 @@
+<Styles xmlns="https://github.com/avaloniaui">
+
+    <StyleInclude Source="avares://ClinicManager/Style/Vars.axaml" />
+    <StyleInclude Source="avares://ClinicManager/Style/Main.axaml" />
+    <StyleInclude Source="avares://ClinicManager/Style/Buttons.axaml" />
+    <StyleInclude Source="avares://ClinicManager/Style/Table.axaml" />
+    <StyleInclude Source="avares://ClinicManager/Style/Nav.axaml" />
+    <StyleInclude Source="avares://ClinicManager/Style/Tile.axaml" />
+    <StyleInclude Source="avares://ClinicManager/Style/Form.axaml" />
+    
+
+</Styles>

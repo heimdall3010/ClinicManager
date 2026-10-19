@@ -1,0 +1,27 @@
+<Styles xmlns="https://github.com/avaloniaui">
+
+<!-- Main content container -->
+<Style Selector="Border.main-content">
+    <Setter Property="Background" Value="{StaticResource Light}" />
+    <Setter Property="Padding" Value="40" />
+</Style>
+
+<!-- Main content layout -->
+<Style Selector="StackPanel.main-content-stack">
+    <Setter Property="Spacing" Value="30" />
+</Style>
+
+<!-- Page title -->
+<Style Selector="TextBlock.main-page-title">
+    <Setter Property="FontSize" Value="38" />
+    <Setter Property="FontWeight" Value="Bold" />
+    <Setter Property="Foreground" Value="{StaticResource TextPrim}" />
+</Style>
+
+<!-- Page description text -->
+<Style Selector="TextBlock.main-page-description">
+    <Setter Property="FontSize" Value="18" />
+    <Setter Property="Foreground" Value="{StaticResource TextSec}" />
+</Style>
+
+</Styles>
